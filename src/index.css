@@ -1,0 +1,140 @@
+/* Reset and base */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f7f9fc;
+  color: #222;
+}
+
+.App {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+h1, h2, h3 {
+  text-align: center;
+  color: #333;
+}
+
+/* Match Setup */
+.setup {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.setup input {
+  width: 90%;
+  margin: 0.5rem auto;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  display: block;
+}
+
+.setup button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.setup button:hover {
+  background-color: #0055aa;
+}
+
+/* Scoreboard */
+.scoreboard {
+  background-color: #ffffff;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.scoreboard p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+/* Action Buttons */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.actions button {
+  flex: 1 1 30%;
+  padding: 0.75rem;
+  background-color: #00b894;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  min-width: 70px;
+}
+
+.actions button:hover {
+  background-color: #009975;
+}
+
+button:focus, input:focus {
+  outline: none;
+  border-color: #0066cc;
+}
+
+/* Winner Section */
+.App h2 {
+  margin-top: 1.5rem;
+}
+
+.App button {
+  margin-top: 1.2rem;
+  padding: 0.75rem 1.25rem;
+  background-color: #d63031;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.App button:hover {
+  background-color: #c0392b;
+}
+
+/* Responsive text */
+@media screen and (max-width: 480px) {
+  .setup input, .setup button, .actions button {
+    font-size: 1rem;
+  }
+
+  .actions button {
+    min-width: 60px;
+    padding: 0.5rem;
+  }
+}
+  
+button:hover {
+  border-color: #646cff;
+}
+
