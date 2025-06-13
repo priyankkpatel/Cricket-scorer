@@ -44,6 +44,26 @@ function App() {
   const setScore = innings === 1 ? setTeam1Score : setTeam2Score;
   const battingTeam = innings === 1 ? matchInfo?.teamA : matchInfo?.teamB;
 
+  const handleUndo = () => {
+  const score = { ...currentScore };
+
+  const lastAction = score.overLog.pop();
+  if (!lastAction) return;
+
+  if (lastAction === 'W') {
+    score.wickets -= 1;
+    score.balls -= 1;
+  } else if (lastAction === 'WD' || lastAction === 'NB') {
+    score.runs -= 1;
+    // no ball counted
+  } else {
+    score.runs -= Number(lastAction);
+    score.balls -= 1;
+  }
+
+  setScore(score);
+};
+
   const handleAction = (type) => {
     const score = { ...currentScore };
 
@@ -131,6 +151,8 @@ function App() {
       {innings === 2 && (
         <h3>🏏 {battingTeam} needs {runsToWin} runs to win</h3>
       )}
+      <button onClick={handleUndo}>Undo</button>
+
       <ActionButtons onAction={handleAction} onInningsEnd={handleInningsEnd} />
     </div>
   );
